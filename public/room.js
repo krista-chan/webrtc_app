@@ -18,7 +18,7 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
         peerCall.answer(stream);
         const yetAnotherVideo = document.createElement("video");
         peerCall.on("stream", userStream => {
-            appendVidStream(video, userStream);
+            appendVidStream(yetAnotherVideo, userStream);
         });
     });
 
