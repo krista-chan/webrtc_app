@@ -8,7 +8,8 @@ const sv = require("http").Server;
 const server = new sv(app)
 const io = require("socket.io")(server);
 const { v4: roomID } = require("uuid");
-const cookieParser = require("cookie-parser")
+const cookieParser = require("cookie-parser");
+
 
 // set up and run server
 app.set("view engine", "ejs");
