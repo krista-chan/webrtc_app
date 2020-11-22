@@ -17,7 +17,9 @@ app.use(cookieParser(config.cookie_parser));
 
 app.get("/", (req, res) => {
     const userID = roomID();
-    res.cookie("userID", userID).render("index", { userID: userID });
+    if (req.cookies.roomID) {
+        return res.clearCookie("roomID").cookie("userID", userID).render("index", { userID: userID });
+    } else res.cookie("userID", userID).render("index", { userID: userID });
 });
 
 app.get("/new", (req, res) => {
